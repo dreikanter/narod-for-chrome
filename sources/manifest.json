@@ -1,8 +1,7 @@
 {
 	"name": "Narod Downloader",
-	"version": "1.0.84",
+	"version": "1.0.85",
 	"description": "Download files from Yandex.Narod (narod.yandex.ru) with no need to type annoying captcha.",
-	"author": "Alex Musayev",  
 	"background_page": "background.html",
 	"page_action": {
 		"default_icon": "images/icon-16.png",

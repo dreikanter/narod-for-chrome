@@ -1,4 +1,5 @@
 import os
+import re
 import json
 from pprint import pprint
 
@@ -11,7 +12,7 @@ def get_extension_info(manifest_file):
         f = open(manifest_file, "rt")
         manifest = json.load(f)
         f.close()
-        return manifest["name"].lower(), manifest["version"]
+        return manifest["name"], manifest["version"]
 
     except:
         print("Error reading manifest file or version not defined.")
@@ -19,6 +20,7 @@ def get_extension_info(manifest_file):
 
 
 name, version = get_extension_info(MANIFEST_FILE)
+name = re.sub(r"\s+", '-', name).lower()
 print("Building %s %s..." % (name, version))
 
 if(not os.path.exists(BUILD_PATH)):
