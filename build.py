@@ -1,33 +1,29 @@
-import re
 import os
+import json
+from pprint import pprint
 
-src_path = './sources'
-manifest_file = src_path + '/manifest.json'
-versions_path = './versions'
+SRC_PATH = './sources'
+MANIFEST_FILE = SRC_PATH + '/manifest.json'
+BUILD_PATH = './versions'
 
-print('Manifest: ' + manifest_file)
-
-def extract_version(manifest_file_name):
+def get_extension_info(manifest_file):
     try:
-        f = open(manifest_file_name, 'r')
-        for line in f.readlines():
-            m = re.match('\s*"version"\s*:\s*"([\d\.]+)"', line)
-            if(m):
-                return m.group(1)
+        f = open(manifest_file, "rt")
+        manifest = json.load(f)
+        f.close()
+        return manifest["name"].lower(), manifest["version"]
+
     except:
-        return ''
+        print("Error reading manifest file or version not defined.")
+        exit(1)
 
-        
-ver = extract_version(manifest_file)
-if(not ver):
-    print('Error reading manifest file or version not defined.')
-    exit(1)
 
-if(not os.path.exists(versions_path)):
-    os.makedirs(versions_path)
+name, version = get_extension_info(MANIFEST_FILE)
+print("Building %s %s..." % (name, version))
+
+if(not os.path.exists(BUILD_PATH)):
+    os.makedirs(BUILD_PATH)
     
-    
-print('Building version ' + ver)
-cmd = '7za a -tzip -r -xr!.svn* %s/narod_%s.zip %s/*' % (versions_path, ver, src_path);
+cmd = "7za a -tzip -r -xr!.svn* %s\/%s_%s.zip %s\/*" % (BUILD_PATH, name, version, SRC_PATH);
 print(cmd)
 os.system(cmd)
