@@ -28,6 +28,6 @@ if(not os.path.exists(versions_path)):
     
     
 print('Building version ' + ver)
-cmd = '7za a -tzip -r -xr!.svn* %s/b23_%s.zip %s/*' % (versions_path, ver, src_path);
+cmd = '7za a -tzip -r -xr!.svn* %s/narod_%s.zip %s/*' % (versions_path, ver, src_path);
 print(cmd)
 os.system(cmd)
