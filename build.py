@@ -23,6 +23,7 @@ def get_extension_info(manifest_file):
 
 name, version = get_extension_info(MANIFEST_FILE)
 name = re.sub(r"\s+", '-', name).lower()
+
 archive_name = os.path.join(BUILD_PATH, "%s_%s.tar.gz" % (name, version))
 print("Building package: %s..." % archive_name)
 
@@ -34,4 +35,11 @@ with tarfile.open(archive_name, "w:gz") as tar:
         print("  Adding %s..." % file_name)
         tar.add(file_name, os.path.basename(file_name))
 
+print("Done.")
+
+print("Building package: %s..." % archive_name)
+archive_name = "%s_%s.zip" % (name, version)
+cmd = "7za a -tzip -r -xr!.svn* %s\/%s %s\/*" % (BUILD_PATH, archive_name, SRC_PATH);
+print(cmd)
+os.system(cmd)
 print("Done.")
