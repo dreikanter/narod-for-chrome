@@ -2,7 +2,7 @@
 
 Google Chrome extension to download files from [Yandex.Narod](http://narod.yandex.ru) without typing all these annoying CAPTCHAs.
 
-Lates build could be installed from [Chrome Web Store](https://chrome.google.com/webstore/detail/ghbefppmmpdhcpeebokjjnkmdflcgbcn).
+Latest build could be installed from [Chrome Web Store](https://chrome.google.com/webstore/detail/ghbefppmmpdhcpeebokjjnkmdflcgbcn).
 
 Note: Narod is a service intended for Russian Yandex audience, so I don't see actual purpose to maintain project documentation in English.
 
