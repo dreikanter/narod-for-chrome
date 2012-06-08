@@ -82,7 +82,7 @@ function showError(message)
 // Вынимает имя файла из URL на народе.ру
 function extractFileName(url) {
 	var result = '';
-	if(url.match(/^http:\/\/narod(\.yandex)?\.ru\/disk\/\d+\/(.+)(\.html)?$/)) {
+	if(url.match(/^http:\/\/narod(\.yandex)?\.ru\/disk\/[\w\d\.]+\/(.+)(\.html)?$/)) {
 		result = RegExp.$1;
 	} else if(url.match(/\/([^\/]+)$/)) {
 		result = RegExp.$1;

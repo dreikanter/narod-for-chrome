@@ -9,7 +9,7 @@ String.prototype.startsWith = function(str) {
 }
 
 function checkForValidUrl(tabId, changeInfo, tab) {
-	if (tab.url.match(/^http:\/\/narod(\.yandex)?\.ru\/disk\/\d+\/.+(\.html)?$/)) {
+	if(tab.url.match(/^http:\/\/narod(\.yandex)?\.ru\/disk\/[\w\d\.]+\/.+(\.html)?$/)) {
 		chrome.pageAction.show(tabId);
 	} else {
 		chrome.pageAction.hide(tabId);
