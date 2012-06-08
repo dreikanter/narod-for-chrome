@@ -1,6 +1,6 @@
 {
 	"name": "Narod Downloader",
-	"version": "1.0.85",
+	"version": "1.1.0",
 	"description": "Download files from Yandex.Narod (narod.yandex.ru) with no need to type annoying captcha.",
 	"background_page": "background.html",
 	"page_action": {
