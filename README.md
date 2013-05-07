@@ -1,6 +1,6 @@
 # Narod Downloader для Chrome
 
-Расширение для Google Chrome, позволяющее скачивать файлы с [Yandex.Narod](http://narod.yandex.ru) без ввода капчи. Установить в браузер можно из [Chrome Web Store](https://chrome.google.com/webstore/detail/ghbefppmmpdhcpeebokjjnkmdflcgbcn).
+Расширение для Google Chrome, позволяющее скачивать файлы с [Яндекс.Народ](http://narod.yandex.ru) без ввода капчи. Установить в браузер можно из [Chrome Web Store](https://chrome.google.com/webstore/detail/ghbefppmmpdhcpeebokjjnkmdflcgbcn).
 
 *Update:* С тех пор как на смену Народу пришёл [Диск](https://disk.yandex.ru/download/), актуальность расширения с каждым днём падает, как и количество файлов, которые всё ещё хостятся на старом народе. Такие дела.
 
